@@ -3,10 +3,10 @@ name: Mongodb CI CD Example
 on:
   push:
     branches:
-    - main
+    - master
   pull_request:
     branches:
-    - main
+    - master
 
 defaults:
   run:
