@@ -15,15 +15,10 @@ defaults:
 jobs:
   container-job:
     runs-on: ubuntu-latest
-
-    # runs all of the steps inside the specified container rather than on the VM host.
-    # Because of this the network configuration changes from host based network to a container network.
-    container:
-      image:  node:12.x
-
-
-
     steps:
-    - uses: actions/checkout@v2
-    - run: npm ci
-    - run: node client.js
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: node client.js
