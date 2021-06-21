@@ -3,9 +3,8 @@ const PORT = process.env.MONGODB_PORT || 27017;
 const HOST = process.env.MONGODB_HOST || "localhost";
 
 async function main() {
-    const client = new MongoClient(`mongodb://lambda:qwertyClaysolAdminqwerty@13.127.119.13:27017/?authSource=admin`, {
+    const client = new MongoClient(`mongodb://lambda:qwertyClaysolAdminqwerty@13.127.119.13:27017/cms?authSource=admin`, {
         useUnifiedTopology: true
-        db: 'cms'
     });
     try {
         await client.connect();
